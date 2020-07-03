@@ -5,7 +5,7 @@ The data from which the Eds are extracted comes from the InScript corpus. The Co
 In set_path_to_InScript you have to specify the path to the Corpus data, so that the programms which are 
 responsible for extracting EDs out of the InScript texts can find them.
 ### allenNLP
-Since allenNLP doesn't work on Windows machines I used the allenlp environment on the Coli-Server. 
+Since allenNLP doesn't work on Windows machines, I used the allenlp environment on the Coli-Server. 
 It works like this:
 * First you have to enter . /proj/contrib/anaconda3/etc/profile.d/conda.sh 
 * Then you can start the anaconda environment by entering conda activate allennlp
