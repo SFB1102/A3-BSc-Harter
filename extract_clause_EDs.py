@@ -104,7 +104,7 @@ for pfad in  pfade:
             zeile+=ed+"###"+label+"*"
     zeilen.append(zeile[:-1])
 
-with codecs.open("InScript_ganzeSaetze_train.txt","w","utf-8") as file:
+with codecs.open("InScript_clauseEDs.txt","w","utf-8") as file:
     for z in zeilen:
         file.write(z+"\n")
                     
