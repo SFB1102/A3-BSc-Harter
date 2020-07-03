@@ -27,7 +27,8 @@ Ther you can start the server which is used by the python package using this com
 java -mx1300m -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000
 
 Now the Stanford CoreNLP Server is running and you can use exctract_clause_EDs.py and
-extract_clause_EDs_without_annotations.py
+extract_claus
+e_EDs_without_annotations.py
 
 ## ED Extraction
 The files extract_only_relevant_EDs.py and extract_unrelevant_EDs_too.py are responsible for the ED Exraction 
@@ -47,5 +48,10 @@ this values will be equal. But if you consider the unvelevant ones, too, the val
 This is because there are different types of labels for unrelevant EDs. For the first value an unrelevant ED counts
 as labeld correctly, if it got assigned one of them. For the second value it has to be the correct unrelevant label.
 ## Clause-ED Extraction
+With the files extract-clauseEDs.py and extract-clauseEds_without_annotations.py you can produce EDs which consist
+of whole clauses instead of Eventverb plus little context. So the complete sentence can be given as input, which
+provides more context for the Event-Tagger. extract-clausesEDs.py uses annotations already provided in the InScript
+Korpus, like extract_only_relevant_EDs.py and extract_unrelevant_EDs_too.py do. extract-clausesEDs_without_annotations.py
+only uses information about the structure of the sentences, the Stanford Parser gives.
 ## Event-Tagger for Clause-EDs
 
