@@ -5,8 +5,30 @@ The data from which the Eds are extracted comes from the InScript corpus. The Co
 In set_path_to_InScript you have to specify the path to the Corpus data, so that the programms which are 
 responsible for extracting EDs out of the InScript texts can find them.
 ### allenNLP
+Since allenNLP doesn't work on Windows machines I used the allenlp environment on the Coli-Server. 
+It works like this:
+* First you have to enter . /proj/contrib/anaconda3/etc/profile.d/conda.sh 
+* Then you can start the anaconda environment by entering conda activate allennlp
+
+If you want to install allennlp on your own Computer, you can find the instructions [here](https://github.com/allenai/allennlp).
 ### Python packages
+This are the python packages which are needed:
+* xml.etree.ElementTree (to read InScript data for ED Extraction)
+* pycorenlp (only needed for Clause-EDs)
+* nltk (only needed for Clause-EDs)
+
+They can be intalled via pip install.
 ### Stanford CoreNLP Server
+So that you can use the pycorenlp package, you have to download Stanford CoreNLP,
+which can be obtaind [here](https://stanfordnlp.github.io/CoreNLP/download.html). 
+After downloading it, use the command line to navigate to the downloaded Stanford CoreNLP folder.
+Ther you can start the server which is used by the python package using this command:
+
+java -mx1300m -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000
+
+Now the Stanford CoreNLP Server is running and you can use exctract_clause_EDs.py and
+extract_clause_EDs_without_annotations.py
+
 ## ED Extraction
 The files extract_only_relevant_EDs.py and extract_unrelevant_EDs_too.py are responsible for the ED Exraction 
 out of the InScript texts. Both programms will ask you which scenario you want to look at and will print the 
