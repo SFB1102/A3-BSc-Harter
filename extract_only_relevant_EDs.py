@@ -157,8 +157,8 @@ with open("InScriptESDs.txt","w") as file:
                                 if p:
                                     i += 1
                                     if partizipanten[t][partizipant]["text"] in pronouns:
-                                        if partizipanten[t][partizipant]["id"] in corefs:
-                                            eventteile[int(p.split("-")[1])] = (corefs[partizipanten[t][partizipant]["id"]],len(corefs[partizipanten[t][partizipant]["id"]].split()))
+                                        if partizipanten[t][partizipant]["label"] in corefs:# If If pronouns are to be replaced, write id instead of label
+                                            eventteile[int(p.split("-")[1])] = (corefs[partizipanten[t][partizipant]["labl"]],len(corefs[partizipanten[t][partizipant]["label"]].split()))# If If pronouns are to be replaced, write id instead of label
 
                                     else:
                                         eventteile[int(p.split("-")[1])] = (partizipanten[t][partizipant]["text"],len(partizipanten[t][partizipant]["text"].split()))
