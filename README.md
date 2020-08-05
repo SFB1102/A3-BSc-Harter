@@ -54,4 +54,8 @@ corpus, like extract_only_relevant_EDs.py and extract_unrelevant_EDs_too.py do. 
 only uses information about the structure of the sentences, the Stanford Parser gives and doesn't need the InScript
 annotations about participants or coreferents.
 ## Event-Tagger for Clause-EDs
-
+Since I used slightly different paramethers for tagging with clause-EDs, you need to use allennlp_kfold_Eventtagger_clauseEDs.py
+instead of allennlp_kfold_clauseEDs.py. For the tagging without InScript annotations you have to combine the clause-EDs without
+annotations and allennlp_kfold_Eventtagger_clauseEDs_without_Annotations.py, because without the annotations you can't
+annotate automatically anymore.
+ 
