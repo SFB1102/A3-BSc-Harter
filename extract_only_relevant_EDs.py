@@ -9,7 +9,7 @@ scenario = input("Please choose one scneario from: cake, library, flight, haircu
 
 
 with open("InScriptESDs.txt","w") as file:
-    pfade = [path_to_InScript+scenario+"/"+datei for datei in os.listdir("G:/Bachelorarbeit/InScript_LREC2016/InScript/corpus/"+scenario)]
+    pfade = [path_to_InScript+scenario+"/"+datei for datei in os.listdir(path_to_InScript+scenario)]
     for pfad in pfade:
         print(pfad)
         zeile = ""
