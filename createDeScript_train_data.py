@@ -9,7 +9,7 @@ scenario = input("Please choose one scneario from: baking a cake, borrowing a bo
 
 scripts = []
 #Wortebene
-"""def auslesen(baum,source):
+def auslesen_word(baum,source):
     for script in baum.findall("script"):
         zeile = ""
         nummer = script.get("id")
@@ -28,9 +28,9 @@ scripts = []
             except KeyError:
                 pass
         zeile = zeile.strip()
-        scripts.append(zeile)"""
+        scripts.append(zeile)
 #ED Ebene
-def auslesen(baum,source):
+def auslesen_ED(baum,source):
     for script in baum.findall("script"):
         zeile = ""
         nummer = script.get("id")
@@ -59,11 +59,23 @@ def auslesen(baum,source):
 try:
     tree1 = ET.parse(path_to_DeScript+"/esds/pilot_esd/"+scenario+".pilot.xml")
     auslesen(tree1,"1")
+    if level == "word":
+        auslesen_word(tree2,"2")
+    elif level == "ED":
+        auslesen_ED(tree1,"2")
+    else:
+        print("Please choose word or ED")
 except FileNotFoundError:
     pass
 tree2 = ET.parse(path_to_DeScript+"/esds/second_esd/"+scenario+".new.xml")
-auslesen(tree2,"2")
-    
+
+level = input("Do you need the data for the word-level model or the ED-level model? Please choose word or ED.")
+if level == "word":
+    auslesen_word(tree2,"2")
+elif level == "ED":
+    auslesen_ED(tree2,"2")
+else:
+    print("Please choose word or ED")
 
 
 random.shuffle(scripts)
