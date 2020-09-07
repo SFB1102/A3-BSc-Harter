@@ -183,9 +183,6 @@ with open("InScriptESDs.txt","w") as file:
                                 for strich in range(0,eventteile[s][1]):
                                     eventtest+="-"
 
-                  
-                    #print(eventtext,eventtest)
-                    indexz = 0
                     for w in eventtext.split():
                         wortneu = ""
                         for char in w.lower():
@@ -193,16 +190,11 @@ with open("InScriptESDs.txt","w") as file:
                                 wortneu += char
                         if wortneu:
                             if not wortneu in ["i","we","they","then"]:
-                                zeile += w+"###"+eventlabel+" "
-                                testzeile += eventtest[indexz]+" "
-                        indexz += 1
-        print("------------",len(zeile.split()),len(testzeile.split()),"------------")
-        file.write(zeile.strip()+"\n")
-        
-        with open("evaluierungshilfe.txt","a") as g:
-            g.write(testzeile.strip()+"\n")
-      
+                                zeile += w+" "
+                    zeile=zeile.strip()
+                    zeile+="###"+eventlabel+"*"
+        if zeile:
+            file.write(zeile[:-1]+"\n")
                         
-                        
-                    
 
+                    
